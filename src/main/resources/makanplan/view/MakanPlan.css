@@ -1,0 +1,158 @@
+.root, .app-root { -fx-background-color: #FFF9E6; -fx-text-fill: #0A2F6B; }
+.section-title { -fx-font-size: 18px; -fx-font-weight: 800; -fx-text-fill: #0A2F6B; }
+
+/* Menu bar */
+.menu-bar {
+    -fx-background-color: #FFF9E6;
+    -fx-background-insets: 0;
+    -fx-padding: 6 12 6 12;
+    -fx-border-color: #F1B800 transparent #F1B800 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu .label { -fx-text-fill: #0A2F6B; }
+
+/* Top nav (Inventory / Planner / Recipes / BMI / Profile) */
+.nav-bar { -fx-spacing: 8; -fx-padding: 8 12; }
+.nav-button {
+    -fx-background-color: linear-gradient(to bottom, #FFE34D, #FFD200);
+    -fx-text-fill: #0A2F6B;
+    -fx-background-radius: 999;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, rgba(10,47,107,0.08), 10, 0, 0, 2);
+}
+.nav-button:hover { -fx-background-color: #fac008; }
+
+/* Buttons */
+.button { -fx-background-radius: 12; -fx-padding: 10 16; -fx-font-weight: 700; }
+.button.primary-yellow {
+    -fx-background-color: linear-gradient(to bottom, #FFE34D, #FFD200);
+    -fx-text-fill: #0A2F6B;
+}
+.button.primary-yellow:hover { -fx-background-color: linear-gradient(to bottom, #FFF178, #FFD200); }
+.button.soft-dark { -fx-background-color: #0A2F6B; -fx-text-fill: #F9FAFB; }
+.button.soft-dark:hover { -fx-background-color: #08244E; }
+.button.danger-ghost {
+    -fx-background-color: transparent; -fx-text-fill: #7F1D1D;
+    -fx-border-color: #FCA5A5; -fx-border-radius: 12;
+}
+.button.danger-ghost:hover { -fx-background-color: #FEF2F2; }
+
+/* Inputs (TextField / PasswordField / ComboBox / DatePicker) */
+.form .text-field, .form .password-field, .form .combo-box, .form .date-picker {
+    -fx-background-color: #f3f4f6;
+    -fx-prompt-text-fill: #9ca3af;
+    -fx-text-fill: #111827;
+    -fx-background-radius: 16;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 16;
+    -fx-padding: 12 14;
+}
+.form .text-field:focused, .form .password-field:focused,
+.form .combo-box:focused, .form .date-picker:focused { -fx-border-color: #FFD200; }
+
+/* Cards */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 16; -fx-border-radius: 16;
+    -fx-padding: 16;
+    -fx-border-color: #E5E7EB;
+    -fx-effect: dropshadow(gaussian, rgba(16,24,40,0.08), 14, 0, 0, 3);
+}
+
+/* Chips / inline stats */
+.inline-stats { -fx-spacing: 8; }
+.chip {
+    -fx-background-color: white; -fx-text-fill: #0A2F6B;
+    -fx-border-color: #E5E7EB; -fx-background-radius: 999; -fx-border-radius: 999;
+    -fx-padding: 4 10; -fx-font-size: 12px; -fx-font-weight: 700;
+}
+.chip.warn   { -fx-background-color: #FFF9E6; -fx-border-color: #F59E0B; -fx-text-fill: #92400E; }
+.chip.danger { -fx-background-color: #FEF2F2; -fx-border-color: #FCA5A5; -fx-text-fill: #7F1D1D; }
+.chip.ok     { -fx-border-color: #E5E7EB; }
+
+/* Tables */
+.table-view.elevated {
+    -fx-background-color: white;
+    -fx-background-radius: 16; -fx-border-radius: 16;
+    -fx-padding: 8; -fx-border-color: #E5E7EB;
+}
+.table-view.elevated .column-header-background {
+    -fx-background-color: #FFE34D; -fx-background-radius: 14 14 0 0;
+}
+.table-view.elevated .column-header, .table-view.elevated .filler {
+    -fx-background-color: transparent;
+}
+.table-view.elevated .column-header .label { -fx-text-fill: #0A2F6B; -fx-font-weight: 800; }
+.table-row-cell:selected { -fx-background-color: #ce980f; }
+.table-row-cell:empty { -fx-background-color: transparent; }
+
+/* Money fields (right-align numbers) */
+.money-field { -fx-alignment: CENTER-RIGHT; }
+
+/* Planner */
+.section-tag {
+    -fx-background-color: #FFE34D; -fx-text-fill: #0A2F6B;
+    -fx-background-radius: 10; -fx-padding: 6 12; -fx-font-weight: 800;
+}
+.total-pill {
+    -fx-background-color: white; -fx-background-radius: 999;
+    -fx-border-color: #E5E7EB; -fx-border-radius: 999;
+    -fx-padding: 4 10; -fx-font-weight: 700;
+}
+
+/* Progress bars used under each meal cell */
+.progress-bar.total-bar { -fx-accent: #FFD200; }
+.progress-bar.total-bar .track { -fx-background-radius: 999; }
+.progress-bar.total-bar .bar   { -fx-background-radius: 999; }
+
+/* Profile */
+.avatar { -fx-background-color: #E5E7EB; -fx-background-radius: 12; }
+
+/* ---------- Auth (Login) ---------- */
+.auth-split { -fx-background-color: transparent; }
+.auth-split > .split-pane-divider { -fx-background-color: #FFD200; -fx-padding: 0 2 0 2; }
+.auth-left  { -fx-background-color: #FFF9E6; }
+.auth-right { -fx-alignment: CENTER; -fx-background-color: linear-gradient(to bottom right, #FFD200, #F1B800); }
+.auth-title { -fx-font-size: 26px; -fx-font-weight: 900; -fx-text-fill: #0A2F6B; }
+.text-subtle { -fx-text-fill: #6b7280; -fx-font-size: 13px; }
+.text-label  { -fx-text-fill: #4b5563; -fx-font-size: 12px; }
+.hero-title { -fx-text-fill: #0A2F6B; -fx-font-size: 46px; -fx-font-weight: 900; }
+.hero-subtitle { -fx-text-fill: #0A2F6B; -fx-opacity: .85; -fx-font-size: 16px; }
+
+/* Hide Tab headers if you use TabPane as a container */
+.content-tabs .tab-header-area { visibility: hidden; -fx-min-height: 0; -fx-pref-height: 0; -fx-max-height: 0; -fx-padding: 0; }
+
+/* Dialogs */
+.mp-dialog { -fx-background-color: white; }
+.mp-dialog > *.button-bar > *.container > .button { -fx-background-radius: 10; -fx-padding: 8 14; }
+.mp-dialog > *.button-bar > *.container > .button:default { -fx-background-color: #FFD200; -fx-text-fill: #0A2F6B; }
+
+/* ===== Planner cells ===== */
+.planner-cell {
+    /* card basics come from .card; this is extra spacing polish */
+    -fx-background-insets: 0;
+}
+
+.planner-cell.today {
+    /* "today" highlight (yellow theme) */
+    -fx-border-color: #FFD200;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.cell-summary {
+    -fx-text-fill: #4b5563;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.cell-item {
+    -fx-text-fill: #0A2F6B;
+    -fx-font-size: 12px;
+}
+
+.error-msg {
+    -fx-text-fill: #ff2c00;
+    -fx-font-size: 12px;
+}

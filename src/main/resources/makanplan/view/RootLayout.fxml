@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="makanplan.view.RootLayoutController">
+
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+                <Menu mnemonicParsing="true" text="_File">
+                        <MenuItem fx:id="Inventory" onAction="#goInventory" text="_Inventory" />
+                        <MenuItem fx:id="MealPlanner" onAction="#goMealPlanner" text="_Meal Planner" />
+                        <MenuItem fx:id="RecipeBook" onAction="#goRecipeBook" text="_Recipe Book" />
+                        <MenuItem fx:id="BMI" onAction="#goBMI" text="_BMI" />
+                        <MenuItem fx:id="Profile" onAction="#goProfile" text="_Profile" />
+                        <SeparatorMenuItem />
+                        <MenuItem fx:id="Close" onAction="#handleClose" text="_Close">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator></MenuItem>
+                </Menu>
+
+                <Menu mnemonicParsing="true" text="_Help">
+                        <MenuItem fx:id="About" onAction="#handleAbout" text="_About" />
+                </Menu>
+        </MenuBar>
+    </top>
+</BorderPane>

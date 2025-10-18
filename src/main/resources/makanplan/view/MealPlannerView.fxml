@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.0"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="makanplan.view.MealPlannerController"
+      spacing="8.0"
+      stylesheets="@MakanPlan.css"
+      styleClass="app-root">
+
+    <padding>
+        <Insets top="8" right="12" bottom="12" left="12"/>
+    </padding>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+            <Label fx:id="bannerLabel" text="Meal Plan: -" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label text="•"/>
+            <Label fx:id="messageLabel" />
+            <Label text="•"/>
+            <Label fx:id="weekTotalLabel" text="Week Total: RM 0.00"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Add from Inventory to Create Meal" onAction="#handleAddFromInventory" styleClass="primary-yellow"/>
+            <Button text="Edit" onAction="#handleEditMeal" styleClass="soft-dark"/>
+            <Button text="Remove" onAction="#handleRemoveMeal" styleClass="danger-ghost"/>
+            <Button text="Clear Week" onAction="#handleClearWeek" styleClass="danger-ghost"/>
+    </HBox>
+
+    <TabPane VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="Calendar" closable="false">
+                <content>
+                    <ScrollPane fitToWidth="true" fitToHeight="true">
+                        <content>
+                            <!-- Weekly grid planner (Mon..Sun rows x Breakfast/Lunch/Dinner/Snacks columns) -->
+                            <GridPane fx:id="calendarGrid" hgap="8" vgap="8">
+                                <padding>
+                                    <Insets top="8" right="6" bottom="8" left="6"/>
+                                </padding>
+                            </GridPane>
+                        </content>
+                    </ScrollPane>
+                </content>
+            </Tab>
+            <Tab text="List" closable="false">
+                <content>
+                    <TableView fx:id="table" styleClass="elevated">
+                        <columns>
+                            <TableColumn fx:id="nameCol"     text="Meal"     prefWidth="220"/>
+                            <TableColumn fx:id="kindCol"     text="Type"     prefWidth="110"/>
+                            <TableColumn fx:id="servingsCol" text="Servings" prefWidth="90"/>
+                            <TableColumn fx:id="costCol"     text="Cost"     prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+
+</VBox>

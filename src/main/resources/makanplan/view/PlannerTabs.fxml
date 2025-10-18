@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="makanplan.view.PlannerTabsController"
+            stylesheets="@MakanPlan.css">
+
+    <top>
+        <HBox spacing="12">
+            <padding><Insets top="10" right="18" bottom="10" left="18"/></padding>
+
+            <ImageView fitWidth="110.0" fitHeight="110.0" preserveRatio="true">
+                <Image url="/images/logo.png"/>
+            </ImageView>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <HBox spacing="6" alignment="CENTER_LEFT">
+                <Button text="🏠 Inventory"  onAction="#navInventory"   styleClass="nav-button"/>
+                <Button text="🗓 Planner"    onAction="#navMealPlanner" styleClass="nav-button"/>
+                <Button text="📖 Recipes"    onAction="#navRecipeBook"  styleClass="nav-button"/>
+                <Button text="⚖ BMI"         onAction="#navBMI"         styleClass="nav-button"/>
+                <Button text="👤 Profile"    onAction="#navProfile"     styleClass="nav-button"/>
+            </HBox>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <!-- Right user row -->
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Label fx:id="userLabel"/>
+                <Button text="⎋  Log out" onAction="#handleLogout" styleClass="danger-ghost">
+                    <tooltip><Tooltip text="Logout"/></tooltip>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <StackPane>
+                <TabPane fx:id="tabs" styleClass="content-tabs">
+                        <Tab fx:id="inventoryTab"   text="Inventory"    closable="false"/>
+                        <Tab fx:id="mealPlannerTab" text="Meal Planner" closable="false"/>
+                        <Tab fx:id="profileTab"     text="Profile"      closable="false"/>
+                        <Tab fx:id="bmiTab"         text="BMI"          closable="false"/>
+                        <Tab fx:id="recipeBookTab"  text="Recipe Book"  closable="false"/>
+                </TabPane>
+        </StackPane>
+    </center>
+
+</BorderPane>

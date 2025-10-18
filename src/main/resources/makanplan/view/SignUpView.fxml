@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="makanplan.view.SignupController"
+            stylesheets="@MakanPlan.css">
+
+        <SplitPane dividerPositions="0.50"
+                   AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
+                   AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
+                   styleClass="auth-split">
+
+                <AnchorPane prefWidth="520.0" minWidth="420.0" styleClass="auth-left">
+                        <VBox spacing="18"
+                              AnchorPane.topAnchor="48" AnchorPane.leftAnchor="44"
+                              AnchorPane.rightAnchor="44" AnchorPane.bottomAnchor="44">
+
+                            <Label text="Create your Makan Plan account" styleClass="auth-title"/>
+                            <Label text="It only takes a moment" styleClass="text-subtle"/>
+
+                            <GridPane hgap="12" vgap="12" styleClass="form">
+                                <columnConstraints>
+                                    <ColumnConstraints percentWidth="100"/>
+                                </columnConstraints>
+
+                                <Label text="Username" GridPane.rowIndex="0" styleClass="text-label"/>
+                                <TextField fx:id="usernameField" promptText="e.g. Username" GridPane.rowIndex="1"/>
+
+                                <Label text="Password" GridPane.rowIndex="2" styleClass="text-label"/>
+                                <PasswordField fx:id="passwordField" promptText="min. 6 characters" GridPane.rowIndex="3"/>
+
+                                <Label text="Confirm Password" GridPane.rowIndex="4" styleClass="text-label"/>
+                                <PasswordField fx:id="confirmField" promptText="repeat password" GridPane.rowIndex="5"/>
+
+                            </GridPane>
+
+                            <HBox spacing="10">
+                                <Button text="Back to Login" onAction="#handleBackToLogin" styleClass="soft-dark"/>
+                                <Button text="Create Account" onAction="#handleSignup" defaultButton="true" styleClass="primary-yellow"/>
+                            </HBox>
+                        </VBox>
+                </AnchorPane>
+
+                <!-- RIGHT: same as Login (centered) -->
+                <StackPane styleClass="auth-right">
+                        <VBox alignment="CENTER"
+                              spacing="16"
+                              maxWidth="520"
+                              StackPane.alignment="CENTER">
+                            <Label text="MAKAN PLAN" styleClass="hero-title"/>
+                            <Label text="Plan your meals the easy way" styleClass="hero-subtitle"/>
+                            <ImageView fitWidth="260.0" fitHeight="260.0" preserveRatio="true">
+                                    <Image url="/images/mealprep.png"/>
+                            </ImageView>
+                        </VBox>
+                </StackPane>
+        </SplitPane>
+</AnchorPane>
